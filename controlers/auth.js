@@ -11,46 +11,88 @@ const db= mysql.createConnection({
     database: process.env.DATABASE
 });
 
-exports.register = (req , res) => {
+router.get('/add_matter', (req,res)=>{
   console.log(req.body); 
 
-  const { name ,email , password , passwordconfirm} = req.body;
+  const {name ,id } = req.body;
 
  
-  db.query('SELECT email FROM users WHERE email =? ',[email], async(error , results) => {
+  db.query('SELECT name FROM matter WHERE name  =? ',[name], async(error , results) => {
         if (error) {
                console.log(error);
         }
 
-        if ( results.length > 0) {
-            return res.render('register', {
-                 message:'that email is already in use'
-            })
-        } 
-        else if ( password !== passwordconfirm ){
-             return res.render('register', {
-              message:'passwords do not match '
+      
+        else if ( id <1 ){
+             return res.render('/admin/add_matter', {
+              message:'enter your id_matter '
             });
         }  
-        console.log(password);
-        console.log(passwordconfirm);
-       let hashedPassword = await bcrypt.hash(password, 8);
-       console.log(hashedPassword);
+        console.log(name);
+        console.log(id);
+  
 
-      db.query('INSERT INTO users SET ?' ,{name: name, email: email,password: hashedPassword}, (error,results) =>{
+      db.query('INSERT INTO matter SET ?' ,{ name:name , id:id }, (error,results) =>{
            if(error ){
              console.log(error);
            }else{
-               console.log(results);
-               return res.render('register', {
-                 message:'user registered '
-                });
-
+             
+              console.log(results);
+               
+               
+               return res.render('/admin/add_matter', {message:'matter registered '});
+               
+               
+               
+          
             }
         })
 
     });
+  
+ 
+  res.render('/admin/add_matter');
+});
+
+router.post('/add_matter', (req,res)=>{
+  console.log(req.body); 
+
+  const { name , id } = req.body;
+
+ 
+  db.query('SELECT  name  FROM matter WHERE  name  =? ',[ name ], async(error , results) => {
+        if (error) {
+               console.log(error);
+        }
+
+       
+        else if ( id  <1){
+             return res.render('/admin/add_matter', {
+              message:'enter your id_matter '
+            });
+        }  
+        console.log(name);
+        console.log(id);
+    
+
+      db.query('INSERT INTO matter SET ?' ,{name : name ,id: id}, (error,results) =>{
+           if(error ){
+             console.log(error);
+           }else{
+             
+              console.log(results);
+               
+               
+               return res.render('/admin/add_matter', {message:'matter registered '});
+               
+               
+               
+          
+            }
+        })
+
+    });
+  
  
 
-
-}
+});

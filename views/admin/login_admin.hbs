@@ -18,7 +18,7 @@
         rel="stylesheet">
 
     <!-- Custom styles for this template-->
-    <link href="css/sb-admin-2.min.css" rel="stylesheet">
+    <link href="/css/sb-admin-2.css" rel="stylesheet">
 
 </head>
 
@@ -43,20 +43,18 @@
                                         <h3 class="text-primary"> se connecter !</h3></p>
                                     </div><br>
                                     <form class="user">
+                                       
                                         <div class="form-group">
-                                            <input type="email" class="form-control form-control-user"
-                                                id="exampleInputEmail" aria-describedby="emailHelp"
-                                                placeholder="Enter Email Address...">
+                                         <label for="email" class="form-label">email adresse</label>
+                                         <input type="email" class="form-control" id="email" name="email">
                                         </div>
                                         <div class="form-group">
-                                            <input type="password" class="form-control form-control-user"
-                                                id="exampleInputPassword" placeholder="Password">
+                                         <label for="password" class="form-label">password</label>
+                                         <input type="password" class="form-control" id="password " name="password">
                                         </div>
-                                        <div class="form-group">
-                                            <div class="custom-control custom-checkbox small">
-                                                <input type="checkbox" class="custom-control-input" id="customCheck">
-                                               
-                                            </div>
+                                        <div align="center">
+                                           <button type="submit" class="btn btn-primary"> Connect </button> 
+                                        </div>
                                         </div>
                                       
                                     

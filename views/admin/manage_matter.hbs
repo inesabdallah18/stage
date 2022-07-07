@@ -123,10 +123,8 @@
                
 
                     <!-- Page Heading -->
-
-                    <a  class="btn btn-primary" href="/admin/add"> add</a>
-                     <a href="/logout">
-                    <button type="button" class="btn btn-primary">logout</button></a>
+                    <a href="http://localhost:5001/admin/add_matter">
+                    <button type="button" class="btn btn-primary">add</button></a>
                     <p class="mb-4">Administrator Area....</p>
 
                     <!-- DataTales Example -->
@@ -138,8 +136,7 @@
                                     <thead>
                                         <tr>
                                             <th>Name</th>
-                                            <th>E_mail</th>
-                                            <th>Password</th>
+                                           
                                             <th>Action</th>
                                         
                                     
@@ -147,22 +144,15 @@
                                     </thead>
                                 
                                     <tbody>
-                                        <tr>
-                                            <td>Ines abdallah</td>
-                                            <td>inesab149@gmail.com</td>
-                                            <td>ines185214</td>
-                                            <td><button type="button" class="btn btn-primary mr-3" >modify</button> <button type="button" class="btn btn-primary">delete</button></td>
-                                            
-                                        </tr>
-                                        <tr>
-                                            <td>khaled abdallah</td>
-                                            <td>khaledesprit@gmail.com</td>
-                                            <td>khaledpsd154</td>
-                                         <td><button type="button" class="btn btn-primary mr-3">modify</button> <button type="button" class="btn btn-primary">delete</button></td>
-                                       
-
+                {{#each matters}}
+                    <tr>
+                        <td>{{this.name}}</td>
+                       
                                            
-                                        </tr>
+                        <td><button type="button" class="btn btn-primary mr-3" >modify</button> <button type="button" class="btn btn-primary">delete</button></td>
+                                            
+                    </tr>
+                {{/each}}
                                    
                                  
                                     </tbody>

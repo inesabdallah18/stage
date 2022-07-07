@@ -123,10 +123,8 @@
                
 
                     <!-- Page Heading -->
-
-                    <a  class="btn btn-primary" href="/admin/add"> add</a>
-                     <a href="/logout">
-                    <button type="button" class="btn btn-primary">logout</button></a>
+                    <a href="http://localhost:5001/admin/add">
+                    <button type="button" class="btn btn-primary">add</button></a>
                     <p class="mb-4">Administrator Area....</p>
 
                     <!-- DataTales Example -->
@@ -134,36 +132,29 @@
                         
                         <div class="card-body">
                             <div class="table-responsive">
-                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                     <thead>
-                                        <tr>
+              <tr>
                                             <th>Name</th>
                                             <th>E_mail</th>
-                                            <th>Password</th>
                                             <th>Action</th>
                                         
                                     
                                         </tr>
                                     </thead>
                                 
-                                    <tbody>
-                                        <tr>
-                                            <td>Ines abdallah</td>
-                                            <td>inesab149@gmail.com</td>
-                                            <td>ines185214</td>
-                                            <td><button type="button" class="btn btn-primary mr-3" >modify</button> <button type="button" class="btn btn-primary">delete</button></td>
-                                            
-                                        </tr>
-                                        <tr>
-                                            <td>khaled abdallah</td>
-                                            <td>khaledesprit@gmail.com</td>
-                                            <td>khaledpsd154</td>
-                                         <td><button type="button" class="btn btn-primary mr-3">modify</button> <button type="button" class="btn btn-primary">delete</button></td>
-                                       
-
+            <tbody>
+                {{#each users}}
+                    <tr>
+                        <td>{{this.name}}</td>
+                        <td>{{this.email}}</td>
                                            
-                                        </tr>
-                                   
+                        <td><button type="button" class="btn btn-primary mr-3" >modify</button> <button type="button" class="btn btn-primary">delete</button></td>
+                                            
+                    </tr>
+                {{/each}}
+                                    
+                                 
                                  
                                     </tbody>
                                 </table>

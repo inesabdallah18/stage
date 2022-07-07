@@ -51,25 +51,24 @@
                 Interface
             </div>
            
-            <!-- Nav Item - Tables -->
+           <!-- Nav Item - Tables -->
             <li class="nav-item active">
-                <a class="nav-link" href="http://localhost:5001/admin/manage_user">
+                <a class="nav-link" href="/admin/manage_user">
                     <i class="fas fa-fw fa-table"></i>
                     <span> manage users</span></a>
             </li>
               <!-- Nav Item - Tables -->
               <li class="nav-item active">
-                <a class="nav-link" href="http://localhost:5001/admin/manage_matter">
+                <a class="nav-link" href="/admin/manage_matter">
                     <i class="fas fa-fw fa-table"></i>
                     <span> manage matters</span></a>
             </li>
                <!-- Nav Item - Tables -->
                <li class="nav-item active">
-                <a class="nav-link" href="http://localhost:5001/admin/manage_course">
+                <a class="nav-link" href="/admin/manage_course">
                     <i class="fas fa-fw fa-table"></i>
                     <span> manage courses</span></a>
             </li>
-
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
 
@@ -123,53 +122,37 @@
                
 
                     <!-- Page Heading -->
-
-                    <a  class="btn btn-primary" href="/admin/add"> add</a>
-                     <a href="/logout">
-                    <button type="button" class="btn btn-primary">logout</button></a>
+                    
                     <p class="mb-4">Administrator Area....</p>
 
-                    <!-- DataTales Example -->
-                    <div class="card shadow mb-4">
-                        
-                        <div class="card-body">
-                            <div class="table-responsive">
-                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                    <thead>
-                                        <tr>
-                                            <th>Name</th>
-                                            <th>E_mail</th>
-                                            <th>Password</th>
-                                            <th>Action</th>
-                                        
-                                    
-                                        </tr>
-                                    </thead>
-                                
-                                    <tbody>
-                                        <tr>
-                                            <td>Ines abdallah</td>
-                                            <td>inesab149@gmail.com</td>
-                                            <td>ines185214</td>
-                                            <td><button type="button" class="btn btn-primary mr-3" >modify</button> <button type="button" class="btn btn-primary">delete</button></td>
-                                            
-                                        </tr>
-                                        <tr>
-                                            <td>khaled abdallah</td>
-                                            <td>khaledesprit@gmail.com</td>
-                                            <td>khaledpsd154</td>
-                                         <td><button type="button" class="btn btn-primary mr-3">modify</button> <button type="button" class="btn btn-primary">delete</button></td>
-                                       
+                 <div class="container mt-4">
+    <div class="card" >
+  <div class="card-header">register form </div>
+  <div class="card-body">
+<form action="/admin/add_matter" method="POST">
+  <div class="form-group">
+    <label for="name" >name</label>
+    <input type="text" class="form-control" id="name" name="name" >
+  </div>
+      <div class="form-group">
+        <label for="teacher_name" class="form-label">teacher_name</label>
+        <label for="teacher_name"> </label>
+  <select name="teacher_name" id="teacher_name">
+    <option value="1">teacher1</option>
+    <option value="2">teacher2</option>
+    <option value="3">teacher3</option>
+    
+  </select></div>
+  
 
-                                           
-                                        </tr>
-                                   
-                                 
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
+    <br>
+
+
+  <button type="submit" class="btn btn-primary">register matter</button>
+</form> </div> </div>
+
+
+
 
                 </div>
                 <!-- /.container-fluid -->

@@ -123,53 +123,49 @@
                
 
                     <!-- Page Heading -->
-
-                    <a  class="btn btn-primary" href="/admin/add"> add</a>
-                     <a href="/logout">
-                    <button type="button" class="btn btn-primary">logout</button></a>
+                    
                     <p class="mb-4">Administrator Area....</p>
 
-                    <!-- DataTales Example -->
-                    <div class="card shadow mb-4">
-                        
-                        <div class="card-body">
-                            <div class="table-responsive">
-                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                    <thead>
-                                        <tr>
-                                            <th>Name</th>
-                                            <th>E_mail</th>
-                                            <th>Password</th>
-                                            <th>Action</th>
-                                        
-                                    
-                                        </tr>
-                                    </thead>
-                                
-                                    <tbody>
-                                        <tr>
-                                            <td>Ines abdallah</td>
-                                            <td>inesab149@gmail.com</td>
-                                            <td>ines185214</td>
-                                            <td><button type="button" class="btn btn-primary mr-3" >modify</button> <button type="button" class="btn btn-primary">delete</button></td>
-                                            
-                                        </tr>
-                                        <tr>
-                                            <td>khaled abdallah</td>
-                                            <td>khaledesprit@gmail.com</td>
-                                            <td>khaledpsd154</td>
-                                         <td><button type="button" class="btn btn-primary mr-3">modify</button> <button type="button" class="btn btn-primary">delete</button></td>
-                                       
+                 <div class="container mt-4">
+    <div class="card" >
+  <div class="card-header">register form </div>
+  <div class="card-body">
+<form action="/admin/add" method="POST">
+  <div class="form-group">
+    <label for="name" >name</label>
+    <input type="text" class="form-control" id="name" name="name" >
+  </div>
+  <div class="form-group">
+        <label for="email" class="form-label">email</label>
+        <input type="email" class="form-control" id="email" name="email">
+    </div>
+     <div class="form-group">
+        <label for="password" class="form-label">password</label>
+        <input type="password" class="form-control" id="password" name="password">
+    </div>
+     <div class="form-group">
+        <label for="passwordconfirm" class="form-label">passwordconfirm</label>
+        <input type="password" class="form-control" id="passwordconfirm" name="passwordconfirm">
+    </div>
+     <div class="form-group">
+        <label for="role_id" class="form-label">role_id</label>
+        <label for="role_id"> </label>
+  <select name="role_id" id="role_id">
+    <option value="1">admin</option>
+    <option value="2">teacher</option>
+    <option value="3">student</option>
+    
+  </select>
+    </div>
+  
 
-                                           
-                                        </tr>
-                                   
-                                 
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
+    <br>
+
+
+  <button type="submit" class="btn btn-primary">register User</button>
+</form> </div> </div>
+
+
 
                 </div>
                 <!-- /.container-fluid -->
