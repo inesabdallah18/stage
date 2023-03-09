@@ -1,4 +1,4 @@
-
+//cette page ne concerne le code juste un teste de départ .
 const mysql = require('mysql');
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
